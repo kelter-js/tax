@@ -1,0 +1,25 @@
+.calculation
+  min-height: 100vh
+  background: $background-pattern
+  box-shadow: 0px -0.11px 16.9495px rgba($dark-blue-rgb, .33)
+
+.calculation--opened
+  box-shadow: none
+  background: rgba($black-rgb, .3)
+
+.calculation__wrapper
+  position: relative
+  display: flex
+  min-width: 1440px
+  min-height: inherit
+
+.calculation__show-popup
+  margin: auto
+  padding: 16px 32px
+  background: none
+  border: 1px solid $white
+  border-radius: 6px
+  filter: drop-shadow(0px 0px 44px $grey)
+  cursor: pointer
+
+  @include fstyle(16px, 24px, $white, 500)

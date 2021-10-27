@@ -1,0 +1,187 @@
+.popup
+  position: relative
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+  min-height: 417px
+  width: 493px
+  margin: auto
+  padding: 27px 27px 32px 32px
+  background-color: $white
+  border-radius: 30px
+
+.popup__button
+  padding: 0
+  border:  none
+  background: none
+  font-family: inherit
+  cursor: pointer
+
+.popup__text
+  margin: 0
+
+.popup__header
+  margin-bottom: 16px
+
+  @include fstyle(28px, 40px, $black, 500)
+
+.popup__annotation
+  width: 488px
+  margin-bottom: 24px
+
+  @include fstyle(14px, 24px, $dark-grey)
+
+.popup__label,
+.popup__discont-text,
+.popup__text--repayment
+  @include fstyle(14px, 24px, $black, 500)
+
+.popup__label--discont
+  margin-right: 16px
+  padding: 6px 12px
+  background: $dark-shade-grey
+  border-radius: 50px
+  font-weight: 400
+  cursor: pointer
+
+.popup__label--selected
+  margin-right: 16px
+  padding: 6px 12px
+  color: $white
+  background: $background-pattern
+
+.popup__salary-value
+  min-height: 22px
+  width: 474px
+  margin-top: 8px
+  margin-bottom: 8px
+  padding-top: 8px
+  padding-left: 10px
+  padding-bottom: 8px
+  border: 1px solid $darker-grey
+  border-radius: 3px
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button,
+    -moz-appearance: none
+    -webkit-appearance: none
+    margin: 0
+
+.popup__salary-value--attention
+  border-color: $bright-red
+
+.popup__calculate
+  margin-bottom: 24px
+
+  @include fstyle(14px, 24px, $bright-red, 500)
+
+.popup__calculate--enabled
+  margin-bottom: 16px
+
+.popup__discont-wrapper
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  margin-bottom: 40px
+
+.popup__discont-text
+  margin-right: 32px
+
+.popup__close-button
+  position: relative
+  height: 40px
+  width: 40px
+
+  @include absoluteElementTopRight(16px, 16px)
+
+  &::before,
+  &::after
+    content: ''
+    height: 4px
+    width: 24px
+    margin-top: -2px
+    margin-left: -12px
+    background-color: $bright-red
+    border-radius: 10px
+
+    @include absoluteElement(absolute, 50%, 50%)
+
+  &::before
+    transform: rotate(45deg)
+
+  &::after
+    transform: rotate(-45deg)
+
+.popup__submit
+  min-height: 56px
+  width: 488px
+  padding-top: 16px
+  padding-bottom: 16px
+  border-radius: 6px
+  box-shadow: 0px 0px 24px rgba($deep-red, .33)
+  background: $background-pattern
+
+  @include fstyle(16px, 24px, $white, 500)
+
+.popup__repayment-wrapper
+  margin-bottom: 20px
+
+.popup__text--repayment
+  margin-bottom: 16px
+
+.popup__repayments-list
+  margin: 0
+  padding: 0
+  list-style: none
+
+.popup__repayment-year
+  color: $dark-grey
+
+.popup__text--amount
+  @include fstyle(14px, 24px, $black)
+
+.popup__repayment-item
+  position: relative
+  min-height: 24px
+  width: 457px
+  padding-top: 16px
+  padding-left: 31px
+  padding-bottom: 16px
+
+  &:first-of-type
+    padding-top: 0
+
+  &::before
+    content: ''
+    height: 1px
+    width: 488px
+    background-color: $darker-grey
+
+    @include absoluteElementBottomLeft(0, 0)
+
+.popup__repayment-checkbox + .popup__repayment-label
+  position: relative
+  cursor: pointer
+
+  &::before
+    content: ''
+    height: 18px
+    width: 18px
+    border: 1px solid $darker-grey
+    border-radius: 6px
+
+    @include absoluteElement(absolute, 2px, -31px)
+
+.popup__repayment-checkbox:checked + .popup__repayment-label
+  &::before
+    height: 20px
+    width: 20px
+    border: none
+    background: $background-pattern
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='11' viewBox='0 0 14 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.45455 8.70149L1.11364 5.25373L0 6.40299L4.45455 11L14 1.14925L12.8864 0L4.45455 8.70149Z' fill='white'/%3E%3C/svg%3E%0A")
+    background-repeat: no-repeat
+    background-position: 50% 50%
+
+.popup--calculation-enabled
+  margin-top: 120px
+  margin-bottom: 88px
