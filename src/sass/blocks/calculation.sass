@@ -13,6 +13,12 @@
   min-width: 1440px
   min-height: inherit
 
+  @media (min-width: $tablet-width) and (max-width: $tablet-width-only)
+    min-width: 768px
+
+  @media (min-width: $mobile-width) and (max-width: $mobile-width-only)
+    min-width: 320px
+
 .calculation__show-popup
   margin: auto
   padding: 16px 32px
@@ -23,3 +29,8 @@
   cursor: pointer
 
   @include fstyle(16px, 24px, $white, 500)
+
+  @media (min-width: $mobile-width) and (max-width: $mobile-width-only)
+    padding: 12px 24px
+    font-size: 12px
+    line-height: 16px

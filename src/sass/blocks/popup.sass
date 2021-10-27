@@ -10,9 +10,20 @@
   background-color: $white
   border-radius: 30px
 
+  @media (min-width: $tablet-width) and (max-width: $tablet-width-only)
+    width: 398px
+    margin-top: 120px
+
+  @media (min-width: $mobile-width) and (max-width: $mobile-width-only)
+    min-height: 536px
+    width: 288px
+    margin: 0 auto
+    padding: 16px
+    border-radius: 0
+
 .popup__button
   padding: 0
-  border:  none
+  border: none
   background: none
   font-family: inherit
   cursor: pointer
@@ -25,11 +36,28 @@
 
   @include fstyle(28px, 40px, $black, 500)
 
+  @media (min-width: $tablet-width) and (max-width: $tablet-width-only)
+    width: 235px
+
+  @media (min-width: $mobile-width) and (max-width: $mobile-width-only)
+    width: 151px
+    margin-top: 16px
+    font-size: 18px
+    line-height: 24px
+
 .popup__annotation
   width: 488px
   margin-bottom: 24px
 
   @include fstyle(14px, 24px, $dark-grey)
+
+  @media (min-width: $tablet-width) and (max-width: $tablet-width-only)
+    width: 369px
+
+  @media (min-width: $mobile-width) and (max-width: $mobile-width-only)
+    width: 288px
+    font-size: 12px
+    line-height: 16px
 
 .popup__label,
 .popup__discont-text,
@@ -44,11 +72,17 @@
   font-weight: 400
   cursor: pointer
 
+  @media (min-width: $mobile-width) and (max-width: $mobile-width-only)
+    margin-right: 0
+
 .popup__label--selected
   margin-right: 16px
   padding: 6px 12px
   color: $white
   background: $background-pattern
+
+  @media (min-width: $mobile-width) and (max-width: $mobile-width-only)
+    margin-right: 0
 
 .popup__salary-value
   min-height: 22px
@@ -67,6 +101,17 @@
     -webkit-appearance: none
     margin: 0
 
+  @media (min-width: $tablet-width) and (max-width: $tablet-width-only)
+    width: 389px
+
+  @media (min-width: $mobile-width) and (max-width: $mobile-width-only)
+    width: 274px
+
+.popup__form
+  @media (min-width: $mobile-width) and (max-width: $tablet-width-only)
+    display: flex
+    flex-direction: column
+
 .popup__salary-value--attention
   border-color: $bright-red
 
@@ -74,6 +119,9 @@
   margin-bottom: 24px
 
   @include fstyle(14px, 24px, $bright-red, 500)
+
+  @media (min-width: $mobile-width) and (max-width: $tablet-width-only)
+    width: 76px
 
 .popup__calculate--enabled
   margin-bottom: 16px
@@ -84,8 +132,20 @@
   align-items: center
   margin-bottom: 40px
 
+  @media (min-width: $mobile-width) and (max-width: $mobile-width-only)
+    display: grid
+    grid-template-columns: 73px 57px
+    grid-template-rows: 24px 36px
+    gap: 24px 8px
+    width: 144px
+    margin-bottom: 140px
+
 .popup__discont-text
   margin-right: 32px
+
+  @media (min-width: $mobile-width) and (max-width: $mobile-width-only)
+    grid-column: 1 / -1
+    margin-right: 0
 
 .popup__close-button
   position: relative
@@ -112,6 +172,15 @@
   &::after
     transform: rotate(-45deg)
 
+  @media (min-width: $mobile-width) and (max-width: $mobile-width-only)
+    height: 24px
+    width: 24px
+
+    &::before,
+    &::after
+      top: 16px
+      right: 16px
+
 .popup__submit
   min-height: 56px
   width: 488px
@@ -122,6 +191,17 @@
   background: $background-pattern
 
   @include fstyle(16px, 24px, $white, 500)
+
+  @media (min-width: $tablet-width) and (max-width: $tablet-width-only)
+    width: 389px
+
+  @media (min-width: $mobile-width) and (max-width: $mobile-width-only)
+    min-height: 16px
+    width: 288px
+    padding-top: 12px
+    padding-bottom: 12px
+    font-size: 12px
+    line-height: 16px
 
 .popup__repayment-wrapper
   margin-bottom: 20px
@@ -158,6 +238,12 @@
     background-color: $darker-grey
 
     @include absoluteElementBottomLeft(0, 0)
+
+  @media (min-width: $tablet-width) and (max-width: $tablet-width-only)
+    width: 358px
+
+    &::before
+      width: 389px
 
 .popup__repayment-checkbox + .popup__repayment-label
   position: relative
