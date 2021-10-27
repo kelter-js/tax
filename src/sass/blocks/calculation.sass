@@ -34,3 +34,17 @@
     padding: 12px 24px
     font-size: 12px
     line-height: 16px
+
+    &:hover,
+    &:active
+      background-color: $white
+      color: $black
+      filter: unset
+      cursor: url('../../img/icons/pointer.png'), pointer
+
+    &:disabled
+      background-color: $light-grey
+      color: $white
+      border: none
+      filter: unset
+      cursor: default

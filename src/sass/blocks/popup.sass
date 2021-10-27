@@ -72,6 +72,16 @@
   font-weight: 400
   cursor: pointer
 
+  &:hover
+    cursor: url('../../img/icons/pointer.png'), pointer
+    background: $darker-grey
+    color: $black
+
+  &:active
+    cursor: url('../../img/icons/pointer.png'), pointer
+    background: $background-pattern
+    color: $white
+
   @media (min-width: $mobile-width) and (max-width: $mobile-width-only)
     margin-right: 0
 
@@ -101,6 +111,15 @@
     -webkit-appearance: none
     margin: 0
 
+  &:hover
+    border-color: $black
+
+  &:focus
+    border-color: $darker-grey
+
+  &:disabled
+    border-color: $dark-grey
+
   @media (min-width: $tablet-width) and (max-width: $tablet-width-only)
     width: 389px
 
@@ -113,12 +132,20 @@
     flex-direction: column
 
 .popup__salary-value--attention
+  margin-bottom: 4px
   border-color: $bright-red
 
 .popup__calculate
   margin-bottom: 24px
 
   @include fstyle(14px, 24px, $bright-red, 500)
+
+  &:hover
+    color: $orange
+    cursor: url('../../img/icons/pointer.png'), pointer
+
+  &:active
+    color: $bright-red
 
   @media (min-width: $mobile-width) and (max-width: $tablet-width-only)
     width: 76px
@@ -192,6 +219,14 @@
 
   @include fstyle(16px, 24px, $white, 500)
 
+  &:disabled
+    background: $light-grey
+    box-shadow: none
+
+  &:hover
+    cursor: url('../../img/icons/pointer.png'), pointer
+    background: $bright-red
+
   @media (min-width: $tablet-width) and (max-width: $tablet-width-only)
     width: 389px
 
@@ -208,6 +243,9 @@
 
 .popup__text--repayment
   margin-bottom: 16px
+
+  @media (min-width: $mobile-width) and (max-width: $mobile-width-only)
+    width: 151px
 
 .popup__repayments-list
   margin: 0
@@ -245,6 +283,12 @@
     &::before
       width: 389px
 
+  @media (min-width: $mobile-width) and (max-width: $mobile-width-only)
+    width: 257px
+
+    &::before
+      width: 288px
+
 .popup__repayment-checkbox + .popup__repayment-label
   position: relative
   cursor: pointer
@@ -257,6 +301,15 @@
     border-radius: 6px
 
     @include absoluteElement(absolute, 2px, -31px)
+
+  &:active
+    cursor: url('../../img/icons/pointer.png'), pointer
+
+  &:hover
+    cursor: url('../../img/icons/pointer.png'), pointer
+
+    &::before
+      border: 1px solid $black
 
 .popup__repayment-checkbox:checked + .popup__repayment-label
   &::before
@@ -271,3 +324,29 @@
 .popup--calculation-enabled
   margin-top: 120px
   margin-bottom: 88px
+
+  @media (min-width: $mobile-width) and (max-width: $mobile-width-only)
+    margin: 0 auto
+
+.popup__discont-wrapper--enabled
+  @media (min-width: $mobile-width) and (max-width: $mobile-width-only)
+    margin-bottom: 40px
+
+.popup__repayment-checkbox:disabled + .popup__repayment-label
+  &::before
+    height: 20px
+    width: 20px
+    border: none
+    background: $light-grey
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='11' viewBox='0 0 14 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.45455 8.70149L1.11364 5.25373L0 6.40299L4.45455 11L14 1.14925L12.8864 0L4.45455 8.70149Z' fill='white'/%3E%3C/svg%3E%0A")
+    background-repeat: no-repeat
+    background-position: 50% 50%
+
+  &:hover,
+  &:active
+    cursor: default
+
+.popup__user-attention
+  margin: 0
+
+  @include fstyle(10px, 12px, $bright-red)

@@ -59,6 +59,7 @@ const PopUp = (props) => {
           value={salary}
           placeholder={props.state.salaryPlaceholder}
           onChange={salaryChange}/>
+          {userAttention && <p className='popup__user-attention'>{props.state.requiredField}</p>}
         <button
           type='button'
           className={calculationIsOpen ? 'popup__button popup__calculate popup__calculate--enabled' : 'popup__button popup__calculate'}
@@ -72,7 +73,7 @@ const PopUp = (props) => {
             salary={salary}
             repayments={props.state.totalEarlyRepayment} />
         )}
-        <div className='popup__discont-wrapper'>
+        <div className={calculationIsOpen ? 'popup__discont-wrapper popup__discont-wrapper--enabled' : 'popup__discont-wrapper'}>
           <p className='popup__text popup__discont-text'>
             {props.state.discontInfo}
           </p>

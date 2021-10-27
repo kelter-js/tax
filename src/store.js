@@ -23,6 +23,7 @@ const store = {
         'payment': true,
         'time': false,
       },
+      'requiredField': 'Поле обязательно для заполнения',
       'minDebounce': 400,
       'deduction': {
         'formula': (salary) => (Number(salary) * 12) * .13,
