@@ -27,20 +27,14 @@
   border-radius: 6px
   filter: drop-shadow(0px 0px 44px $grey)
   cursor: pointer
+  font-family: inherit
 
-  @include fstyle(16px, 24px, $white, 500)
-
-  @media (min-width: $mobile-width) and (max-width: $mobile-width-only)
-    padding: 12px 24px
-    font-size: 12px
-    line-height: 16px
-
-    &:hover,
-    &:active
-      background-color: $white
-      color: $black
-      filter: unset
-      cursor: url('../../img/icons/pointer.png'), pointer
+  &:hover,
+  &:active
+    background-color: $white
+    color: $black
+    filter: unset
+    cursor: url('../../img/icons/pointer.png'), pointer
 
     &:disabled
       background-color: $light-grey
@@ -48,3 +42,10 @@
       border: none
       filter: unset
       cursor: default
+
+  @include fstyle(16px, 24px, $white, 500)
+
+  @media (min-width: $mobile-width) and (max-width: $mobile-width-only)
+    padding: 12px 24px
+    font-size: 12px
+    line-height: 16px
