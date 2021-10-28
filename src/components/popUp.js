@@ -43,7 +43,8 @@ const PopUp = (props) => {
 
   const showSuccessMessage = (e) => {
     e.preventDefault();
-    if (!salary) {
+    if (salary < props.state.deduction.minValue) {
+      userAttentionUpdater(true);
       return;
     }
     messageStateUpdater(true);

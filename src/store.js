@@ -26,7 +26,7 @@ const store = {
       'successfulMessage': 'Данные успешно отправлены',
       'messageTimer': 2000,
       'messageState': false,
-      'requiredField': 'Поле обязательно для заполнения',
+      'requiredField': 'Поле обязательно для заполнения. Минимальное значение 13617',
       'minDebounce': 400,
       'deduction': {
         'formula': (salary) => (Number(salary) * 12) * .13,
