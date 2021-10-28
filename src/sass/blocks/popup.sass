@@ -350,3 +350,17 @@
   margin: 0
 
   @include fstyle(10px, 12px, $bright-red)
+
+.popup__message-wrapper
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 50px
+  width: 250px
+  margin-top: -25px
+  margin-left: -125px
+  background-color: $white
+  border: 1px solid $black
+  border-radius: 10px
+
+  @include absoluteElement(absolute, 50%, 50%)

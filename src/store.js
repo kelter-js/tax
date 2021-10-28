@@ -23,6 +23,9 @@ const store = {
         'payment': true,
         'time': false,
       },
+      'successfulMessage': 'Данные успешно отправлены',
+      'messageTimer': 2000,
+      'messageState': false,
       'requiredField': 'Поле обязательно для заполнения',
       'minDebounce': 400,
       'deduction': {

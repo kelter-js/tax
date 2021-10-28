@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { CalculatedRepayment } from './calculatedRepayment.js';
+import { SuccessMessage } from './successMessage.js';
 
 const PopUp = (props) => {
   const [calculationIsOpen, calculationIsOpenUpdater] = useState(props.state.calculationIsOpen);
   const [salary, salaryUpdater] = useState(props.state.salaryState);
   const [discontState, discontStateUpdater] = useState(props.state.discontState);
   const [userAttention, userAttentionUpdater] = useState(props.state.userAttention);
+  const [messageState, messageStateUpdater] = useState(props.state.messageState);
 
   const openCalculation = (e) => {
     if (salary < props.state.deduction.minValue) {
@@ -39,6 +41,15 @@ const PopUp = (props) => {
     discontStateUpdater({...newDiscountState, [target.value]: true});
   }
 
+  const showSuccessMessage = (e) => {
+    e.preventDefault();
+    if (!salary) {
+      return;
+    }
+    messageStateUpdater(true);
+    setTimeout(() => messageStateUpdater(false), props.state.messageTimer);
+  }
+
   return (
     <div className={calculationIsOpen ? 'popup popup--calculation-enabled' : 'popup'}>
       <h3 className='popup__text popup__header'>
@@ -47,7 +58,7 @@ const PopUp = (props) => {
       <p className='popup__text popup__annotation'>
         {props.state.about}
       </p>
-      <form className='popup__form' action='https://echo.somewhereelse.com/' method='post'>
+      <form onSubmit={showSuccessMessage} className='popup__form' action='https://echo.somewhereelse.com/' method='post'>
         <label htmlFor='salary' className='popup__label'>
           {props.state.salaryInfo}
         </label>
@@ -104,6 +115,7 @@ const PopUp = (props) => {
           {props.state.submit}
         </button>
       </form>
+      {messageState && <SuccessMessage message={props.state.successfulMessage}/>}
       <button type='button' className='popup__button popup__close-button' onClick={props.closeModal}>
         <span className='visually-hidden'>
           {props.state.close}
